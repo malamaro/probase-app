@@ -5,3 +5,5 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AccountController;
 
 Route::get('/api/balance/{id}', [AccountController::class, 'balance']);
+
+Route::get('login', [LoginController::class,'login']);
