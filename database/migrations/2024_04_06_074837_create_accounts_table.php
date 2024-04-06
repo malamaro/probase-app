@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('account_id')->constrained()->onUpdate('cascade');
-            $table->enum('type',['WITHDRAW','DEPOSIT']);
-            $table->float('amount');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->float('balance')->default(0);
             $table->timestamps();
         });
     }
