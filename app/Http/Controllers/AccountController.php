@@ -26,6 +26,8 @@ class AccountController extends Controller
     {
         $account = Account::find($id);
 
+         
+
         return response()->json($account);
     }
 }

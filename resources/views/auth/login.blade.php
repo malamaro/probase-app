@@ -10,14 +10,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
+                <form action="{{ route('Login') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                        <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="Enter email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="exampleFormControlInput1" placeholder="Enter password">
+                      </div>
+                      <div class="mb-3">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                      </div>
+                </form>
             </div>
         </div>
     </div>
